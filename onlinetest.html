@@ -1,0 +1,243 @@
+<html>
+<link rel="stylesheet" type="text/css" href="onlinetest.css">
+
+
+<p1>测试A</p1>
+<script>
+    var score=0;
+    var username;
+
+</script>
+<p>
+    <STYLE>
+        TD {
+            FONT-SIZE: 12px;
+            COLOR: #ffffff;
+            FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+        }
+    </STYLE>
+    <SCRIPT language=JavaScript>
+        function tick() {
+            var years, months, days, hours, minutes, seconds;
+            var intYears, intMonths, intDays, intHours, intMinutes, intSeconds;
+            var today;
+            today = new Date(); //系统当前时间
+            intYears = today.getFullYear(); //得到年份,getFullYear()比getYear()更普适
+            intMonths = today.getMonth() + 1; //得到月份，要加1
+            intDays = today.getDate(); //得到日期
+            intHours = today.getHours(); //得到小时
+            intMinutes = today.getMinutes(); //得到分钟
+            intSeconds = today.getSeconds(); //得到秒钟
+            years = intYears + "-";
+            if (intMonths < 10) {
+                months = "0" + intMonths + "-";
+            } else {
+                months = intMonths + "-";
+            }
+            if (intDays < 10) {
+                days = "0" + intDays + " ";
+            } else {
+                days = intDays + " ";
+            }
+            if (intHours == 0) {
+                hours = "00:";
+            } else if (intHours < 10) {
+                hours = "0" + intHours + ":";
+            } else {
+                hours = intHours + ":";
+            }
+            if (intMinutes < 10) {
+                minutes = "0" + intMinutes + ":";
+            } else {
+                minutes = intMinutes + ":";
+            }
+            if (intSeconds < 10) {
+                seconds = "0" + intSeconds + " ";
+            } else {
+                seconds = intSeconds + " ";
+            }
+            timeString = years + months + days + hours + minutes + seconds;
+            Clock.innerHTML = timeString;
+            window.setTimeout("tick();", 1000);
+        }
+        window.onload = tick;
+    </SCRIPT>
+</p>
+<p leftMargin=0 topMargin=0 marginwidth="0" marginheight="0">
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TR bgColor=#73a3d4 height=40>
+            <TD noWrap align=right width=209><SPAN id="Clock"></SPAN></TD>
+        </TR>
+    </TABLE>
+</p>
+<p>考试时间：30min</p>
+
+<script type="text/javascript">
+    var browser=navigator.appName;
+    var b_version=navigator.appVersion;
+    var version=parseFloat(b_version);
+    document.write("你现在是用的浏览器为："+browser);
+    document.write("<br/>");
+    document.write("浏览器版本为："+version);  
+    document.write("<br/>");
+
+</script>
+
+<p>
+<script type="text/javascript">
+    var d = new Date();
+    var time = d.getHours();
+    if (time<12)
+    {
+        document.write("<b>早安。</b>");
+    }
+    else if (time>=12 && time<=18)
+    {
+        document.write("<b>下午好。</b>");
+    }
+    else if(time>18)
+    {
+        document.write("<b>晚上好!。</b>");
+    }
+    </script>
+</p>
+
+
+
+<input id="numba">
+<button type="button" id="usernameget" onclick="Function1()">提交姓名</button>
+
+<p id="demoa"></p>
+
+<script type="text/javascript">
+function Function1() {
+
+    // 获取 id="numb" 的值
+    username= document.getElementById("numba").value;
+    document.getElementById("nameinput").value=username;
+
+  
+    var but = document.getElementById('usernameget').disabled = true;
+
+}
+</script>
+
+
+
+<p>第一题：下列的说法中，正确的数量是：</p>
+<p>1.二元函数连续一定可导</p>
+<p>2.二元函数可导一定连续</p>
+<p>3.若某二元函数的方向导数存在，那么它一定连续</p>
+<p>4.可微的二元函数一定连续</p>
+
+<input id="numb">
+<button type="button" id="button1" onclick="myFunction()">提交第一题的答案</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x, text;
+
+    // 获取 id="numb" 的值
+    x = document.getElementById("numb").value;
+
+    if (x==1) {
+
+        score=score+1;
+    } else {
+
+    }
+    var but = document.getElementById('button1').disabled = true;
+}
+</script>
+
+<p>第二题：下列说法正确的是C：</p>
+
+<script>
+        function sel() {
+            var mySelect = document.getElementById("testSelect");   //定位id（获取select）
+            var index = mySelect.selectedIndex;   //选中索引（选取select中option选中的第几个）
+			var text = mySelect.options[index].text; //获取选中文本，即option标签对之间的文字
+            var value = mySelect.options[index].value;   //获取选中值
+
+			if (mySelect.options[2].selected) {  //注意index是从0开始的
+
+				//window.alert("1");
+                score=score+1;
+			} else {
+
+			}
+            var but = document.getElementById('testSelect').disabled = true;
+        }
+</script>
+
+<p>
+    <select id="testSelect" onchange="sel()">
+        <option id="op_1" value="A">A</option>
+        <option id="op_2" value="B">B</option>
+        <option id="op_3" value="C">C</option>
+        <option id="op_4" value="D">D</option>
+    </select>
+    <br>
+    </br>
+</p>
+
+
+<script type="text/javascript">
+    function check(){
+      var checkradio=document.getElementsByName("useradio");
+      var selectvalue=0;        //selectvalue为radio中选中的值
+         for(var i=0;i<checkradio.length;i++) {
+             if(checkradio[i].checked) {
+                selectvalue=checkradio[i].value;
+          }
+      } 
+  
+        if(selectvalue=="A"){
+          score=score+1;
+        }
+        var but = document.getElementById('button4').disabled = true;        
+   }
+</script>	
+
+<p>第三题：选择A</p>
+<p>
+    <input type="radio" name="useradio" id="checkradio1" value="A">
+    <label for="radio1">A  </label>
+    <input type="radio" name="useradio" id="checkradio2" value="B">
+    <label for="radio2">B </label> 
+    <input type="radio" name="useradio" id="checkradio3" value="C">
+    <label for="radio3">C</label>
+</p>
+<p>
+    <input type="button" id="button4" onClick="check()" value="提交第三题的答案">
+</p>
+
+<button type="button" id="send" onclick="output()">提交并且查看分数</button>
+<script>
+    function output(){
+    alert(username+"你的分数为:"+score);
+    document.getElementById("scoreinput").value=score;
+
+ 
+ 
+    var but = document.getElementById('send').disabled = true;
+    }
+</script>
+<p>这是只读的显示框，别想着偷改成绩，你是改不了的哈哈！</p>
+<form method="post" action="http://192.168.31.204:8010/test.asp">
+名字: <input id="nameinput" type="text" readonly="readonly" name="username"><br>
+分数: <input id="scoreinput" type="text" readonly="readonly" name="score"><br><br>
+<input type="submit" value="将分数提交到数据库">
+</form>
+
+<body>
+    <form action="look.asp" method="get">
+    <input type="submit" value="历史成绩" />
+    </form>
+    <form action="sortandlist.asp" method="get">
+    <input type="submit" value="查看排序好的历史成绩" />
+    </form>
+</body>
+</html>
